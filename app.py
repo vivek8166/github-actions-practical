@@ -1,12 +1,15 @@
-from flask import Flask, render_template
-app = Flask(__name__)
+import random
 
+secret_number = random.randint(1, 100)
+attempts = 0
 
-@app.route('/')
-def hello_world():
-    return render_template('index.html')
-
-
-@app.route('/health')
-def health():
-    return 'Server is up and running'
+while True:
+    guess = int(input("Your guess: "))
+    attempts += 1
+    if guess < secret_number:
+        print("Try a higher number.")
+    elif guess > secret_number:
+        print("Try a lower number.")
+    else:
+        print(f"Congratulations! You've guessed the number in {attempts} attempts.")
+        break   
