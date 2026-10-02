@@ -1,0 +1,16 @@
+#Workflows: A workflow is the complete yaml file that defines your automation.
+name: Hello
+
+#jobs: A workflow can contain one or more jobs
+on:
+  workflow_dispatch:
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello to everyone
+        run: echo"hello world"
+#Steps: Individual tasks inside a job
+
+#Actions: An action is a reusable piece of functionallity that can perform a particular task
