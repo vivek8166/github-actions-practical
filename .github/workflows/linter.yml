@@ -1,0 +1,28 @@
+#goal of this linter is to check the syntax, format, identation of the python code is correct or not.
+#whenever there is any changes in the code.
+
+name: auto linter
+
+on:
+  push:
+    paths: "*.py"
+
+jobs:
+  code-linting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout/clone the code
+        uses: actions/checkout@v7
+
+      - name: Install linter
+        run: pip install ruff
+
+      - name: Check the files for linting
+        run: ruff check .
+
+
+
+
+
+
+  
